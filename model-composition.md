@@ -1,5 +1,5 @@
 ---
-layout: unified-alignment-for-agents
+layout: model-composition
 ---
 
 ## Abstract
