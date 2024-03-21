@@ -1,4 +1,2 @@
-mdl_repo: # To do
-twitter:
-  card: summary_large_image
-  title_image: https://agent-force.github.io/assets/static/logo.jpg
+url: https://fzack.github.io/model-composition
+root: /model-composition/
