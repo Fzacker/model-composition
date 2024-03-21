@@ -1,2 +1,4 @@
-url: https://fzack.github.io/
-root: /
+mdl_repo: # To do
+twitter:
+  card: summary_large_image
+  title_image: https://fzacker.github.io/model-composition.github.io/assets/static/logo.jpg
