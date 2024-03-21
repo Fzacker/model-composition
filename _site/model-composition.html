@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <title>Model Composition</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <link rel="icon" type="image/x-icon" href="/assets/static/logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#e77500">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- MathJax -->
+    <script
+      type="text/javascript"
+      async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"
+    >
+    </script>
+
+    <!-- OG cards, including feishu, facebook, etc. -->
+    <meta name="og:title"   content="Model Composition">
+    <meta name="og:image"   content="https://fzacker.github.io/model-composition/assets/static/preview-card.png">
+    <meta name="og:description" content="Model Composition for Multimodal Large Language Models">
+    <meta name="og:url" content="https://fzacker.github.io/model-composition/model-composition.html">
+
+    <!-- Twitter cards -->
+    <meta name="twitter:title"   content="Model Composition">
+    <meta name="twitter:card"    content="summary_large_image">
+    <meta name="twitter:image"   content="https://fzacker.github.io/model-composition/assets/static/preview-card.png">
+    <meta name="twitter:description" content="Model Composition for Multimodal Large Language Models">
+  </head>
+  <body>
+    <header class="page-header" role="banner">
+      <font size=6><b>Model Composition for Multimodal Large Language Models</b></font>
+
+      <!--<div style="margin-top: 1rem">
+
+        <img src="/assets/static/logo.jpg" style="width:4em;vertical-align: middle" alt="Logo"/> <span style="vertical-align: middle"><font size=5>AgentForce Team</font></span><br>
+      </div>-->
+
+      <div style="margin-top: 2rem">
+        <!-- <span class="author-block">Xiang Yue*<sup style="color:#6fbf73;">†,1</sup>,</span> -->
+        <span class="author-block">
+          <font size=4><a href="https://carboncoo.github.io" style="text-decoration: none; color: inherit;">Chi Chen<sup>*,1</sup></a></font>,
+        </span>
+        <span class="author-block">
+          <font size=4><a href="https://adu2021.github.io/" style="text-decoration: none; color: inherit;">Yiyang Du<sup>*,1</sup></a></font>,
+        </span>
+        <font size=4><span class="author-block">Zheng Fang<sup>1</sup>,</span></font>
+        <font size=4><span class="author-block">Ziyue Wang<sup>1</sup>,</span></font>
+        <font size=4><span class="author-block">Fuwen Luo<sup>1</sup>,</span></font>
+        <span class="author-block">
+          <font size=4><a href="https://www.lpeng.net/" style="text-decoration: none; color: inherit;">Peng Li<sup>2</sup>,</a></font>
+        </span><br>
+        <font size=4><span class="author-block">Ming Yan<sup>3</sup>,</span></font>
+        <font size=4><span class="author-block">Ji Zhang<sup>3</sup>,</span></font>
+        <font size=4><span class="author-block">Fei Huang<sup>3</sup>,</span></font>
+        <font size=4><span class="author-block">Maosong Sun<sup>1</sup>,</span></font>
+        <span class="author-block">
+          <font size=4><a href="https://nlp.csai.tsinghua.edu.cn/~ly/" style="text-decoration: none; color: inherit;">Yang Liu<sup>1,2</sup></a></font>
+        </span>
+      
+      </div>
+      
+
+      <div style="margin-top: 1rem">
+        <font size=4><sup>*</sup> Equal Contribution </font><br>
+        <font size=4><sup>1</sup> <a href="https://www.cs.tsinghua.edu.cn/csen/">Department of Computer Science and Technology, Tsinghua University</a></font><br>
+        <font size=4><sup>2</sup> <a href="https://air.tsinghua.edu.cn/en/">Institute for AI Industry Research (AIR), Tsinghua University</a></font><br>
+        <font size=4><sup>3</sup> Institute of Intelligent Computing, Alibaba Group</a></font><br>
+      </div>
+      
+      <a href="https://arxiv.org/abs/2402.12750" class="btn"><b>📝&emsp;Paper</b></a>
+      
+      <a href="" class="btn"><b>💰&emsp;Code for Model Composition</b></a>
+      
+      <a href="" class="btn"><b>🌐&emsp;Live Site</b></a>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <div style="text-align:center;margin-bottom: 2rem">
+          <font size=4> Our proposed model composition method that creates a versatile model from existing MLLMs through a training-free and extensible process:</font>
+          <br>
+      </div>
+
+      <div style="text-align:center;">
+        <img src="/assets/static/fig-1.png" width="80%">
+      </div>
+
+      <!--<video controls width="100%" autoplay muted loop>
+      <source src="assets/static/vid-1.mp4" type="video/mp4">
+      </video>-->
+
+      <h2 id="abstract">Abstract</h2>
+
+<p>Recent developments in Multimodal Large Language Models (MLLMs) have shown rapid progress, moving towards the goal of creating versatile MLLMs that understand inputs from various modalities. However, existing methods typically rely on joint training with paired multimodal instruction data, which is resource-intensive and challenging to extend to new modalities. In this paper, we propose a new paradigm through the model composition
+of existing MLLMs to create a new model that retains the modal understanding capabilities of each original model. Our basic implementation, <strong>NaiveMC</strong>, demonstrates the effectiveness of this paradigm by reusing modality encoders and merging LLM parameters. Furthermore, we introduce <strong>DAMC</strong> to address parameter interference and  mismatch issues during the merging process, thereby enhancing the model performance. To facilitate research in this area, we propose <strong>MCUB</strong>, a benchmark for assessing ability of MLLMs to understand inputs from diverse modalities. Experiments on this benchmark and four other multimodal understanding tasks show significant improvements over baselines, proving that model composition can create a versatile model capable of processing inputs from multiple modalities.</p>
+
+<h2 id="methodology">Methodology</h2>
+
+<div style="text-align:center;">
+      <img src="/assets/static/fig-3.png" width="80%" />
+   </div>
+
+<div style="text-align:center;margin-bottom: 2rem">
+      <font size="3"> Figure 1: Illustration of the model composition processes with only image and audio modalities are considered for simplicity. (a) and (b) show a basic model composition framework, while (c) and (d) demonstrate model composition with parameter decoupling</font>
+      <br />
+   </div>
+
+<h3 id="a-model-composition-framework">A Model Composition Framework</h3>
+
+<p>In our composition framework, we retain all modal-specific components (and their weights) from different MLLMs to handle respective modal inputs, and connect them to the same LLM. In cases where the LLMs have not been adapted during the training of MLLMs (as illustrated in the Figure 1(a)), we employ the pre-trained  weights of the LLM directly. Conversely, if the LLMs have undergone adaptation in the MLLM training process (Figure 1(b)), we simply average their weights. We name this composition framework NaiveMC and provide a formal procedure of it in Algorithm 1.</p>
+
+<div style="text-align:center;">
+      <img src="assets/static/fig-2.png" width="30%" />
+   </div>
+
+<h3 id="parameter-decoupling">Parameter Decoupling</h3>
+
+<h3 id="adaptive-parameter-adjustment">Adaptive Parameter Adjustment</h3>
+
+<h3 id="multimodal-commonality-understanding-benchmark">Multimodal Commonality Understanding Benchmark</h3>
+
+<h2 id="contact">Contact</h2>
+
+<p>This project is co-led by <a href="https://carboncoo.github.io">Chi Chen</a>, <a href="https://adu2021.github.io">Yiyang Du</a>, and is advised by <a href="https://www.lpeng.net/">Peng Li</a> (lipeng@air.tsinghua.edu.cn) and <a href="https://nlp.csai.tsinghua.edu.cn/~ly">Yang Liu</a> (liuyang2011@tsinghua.edu.cn).</p>
+
+<h2 id="citation">Citation</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@article{chen2024model,
+  title={Model Composition for Multimodal Large Language Models},
+  author={Chen, Chi and Du, Yiyang and Fang, Zheng and Wang, Ziyue and Luo, Fuwen and Li, Peng and Yan, Ming and Zhang, Ji and Huang, Fei and Sun, Maosong and others},
+  journal={arXiv preprint arXiv:2402.12750},
+  year={2024}
+}
+</code></pre></div></div>
+
+
+      <!-- <footer class="site-footer">
+        <span style="vertical-align: middle"><b>This project is powered by</b></span> <img src="/assets/static/logo.jpg" style="width:3em;vertical-align: middle" alt="Logo"/> <span style="vertical-align: middle"><b>AgentForce Team, affiliated with <a href="https://www.cs.tsinghua.edu.cn/csen/">DCST</a> and <a href="https://air.tsinghua.edu.cn/en/">AIR</a> in Tsinghua University. The environment construction in the proof-of-concept studies is heavily inspired by the original <a href="https://webshop-pnlp.github.io/">WebShop</a> environment.</b></span>
+        </span>
+      </footer> -->
+    </main>
+  </body>
+</html>
