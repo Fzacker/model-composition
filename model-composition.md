@@ -28,9 +28,41 @@ In our composition framework, we retain all modal-specific components (and their
 
 ### Parameter Decoupling
 
+To address the potential for parameter interference when merging fine-tuned LLM parameters, we advocate for initially training the MLLMs with a parameter decoupling strategy in the first place. As shown in Figure 1(c) and Figure 1(d), the main idea is to separate the modality processing parameters from those of the language model within MLLMs. When composing MLLMs that are trained through parameter decoupling, we merge only the text-related parameters, maintaining distinct modality-specific parameters as depicted in Figure 1(d). By doing so, it effectively mitigates the risk of interference from other modalities, ensuring that the composite model maintains high fidelity in processing multimodal data. At the same time, after the MLLMs are trained, the composition phase remains emphatically training-free.
+
 ### Adaptive Parameter Adjustment
 
+For models trained using parameter decoupling, we can additionally adjust their modality-specific parameters if needed. The values of these coefficients can be determined with a validation set from target tasks requiring various modal inputs. If such a validation set is not available, a practical alternative is to select the coefficients based on general performance of the model on tasks of each modality. We refer to the updated model composition framework with parameter decoupling and adjustment as **DAMC**.
+
 ### Multimodal Commonality Understanding Benchmark
+
+   <div style="text-align:center;">
+      <img src="assets/static/fig-4.png" width="50%">
+   </div>
+
+To demonstrate the effectiveness of our approach on tasks involving numerous modalities, inspired by Panagopoulou et al. (2023)(https://arxiv.org/pdf/2402.12750.pdf), we introduce a new benchmark called the Multimodal Commonality Understanding Benchmark **(MCUB)**. We provide an example of MCUB in the figure above.
+
+## Qualitative Results
+
+   <div style="text-align:center;margin-bottom: 2rem">
+      <img src="assets/static/sample-1.png" width="50%">
+   </div>
+
+   <div style="text-align:center;margin-bottom: 2rem">
+      <img src="assets/static/sample-2.png" width="50%">
+   </div>
+
+   <div style="text-align:center;margin-bottom: 2rem">
+      <img src="assets/static/sample-3.png" width="57%">
+   </div>
+
+   <div style="text-align:center;margin-bottom: 2rem">
+      <img src="assets/static/sample-4.png" width="57%">
+   </div>
+
+   <div style="text-align:center;">
+      <img src="assets/static/sample-5.png" width="57%">
+   </div>
 
 ## Contact
 
