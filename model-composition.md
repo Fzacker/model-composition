@@ -10,7 +10,7 @@ of existing MLLMs to create a new model that retains the modal understanding cap
 ## Methodology
 
    <div style="text-align:center;">
-      <img src="/assets/static/fig-3.png" width="80%">
+      <img src="/assets/static/main.png" width="80%">
    </div>
 
    <div style="text-align:center;margin-bottom: 2rem">
@@ -23,7 +23,7 @@ of existing MLLMs to create a new model that retains the modal understanding cap
 In our composition framework, we retain all modal-specific components (and their weights) from different MLLMs to handle respective modal inputs, and connect them to the same LLM. In cases where the LLMs have not been adapted during the training of MLLMs (as illustrated in the Figure 1(a)), we employ the pre-trained  weights of the LLM directly. Conversely, if the LLMs have undergone adaptation in the MLLM training process (Figure 1(b)), we simply average their weights. We name this composition framework NaiveMC and provide a formal procedure of it in Algorithm 1.
 
    <div style="text-align:center;">
-      <img src="assets/static/fig-2.png" width="30%">
+      <img src="assets/static/algorithm.png" width="30%">
    </div>
 
 ### Parameter Decoupling
@@ -37,7 +37,7 @@ For models trained using parameter decoupling, we can additionally adjust their 
 ### Multimodal Commonality Understanding Benchmark
 
    <div style="text-align:center;">
-      <img src="assets/static/fig-4.png" width="50%">
+      <img src="assets/static/sample.png" width="50%">
    </div>
 
 To demonstrate the effectiveness of our approach on tasks involving numerous modalities, inspired by Panagopoulou et al. (2023)(https://arxiv.org/pdf/2402.12750.pdf), we introduce a new benchmark called the Multimodal Commonality Understanding Benchmark **(MCUB)**. We provide an example of MCUB in the figure above.
