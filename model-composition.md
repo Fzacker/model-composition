@@ -10,7 +10,7 @@ of existing MLLMs to create a new model that retains the modal understanding cap
 ## Methodology
 
    <div style="text-align:center;">
-      <img src="/assets/static/main.png" width="80%">
+      <img src="https://fzacker.github.io/model-composition/assets/static/fig-2.png" width="80%">
    </div>
 
    <div style="text-align:center;margin-bottom: 2rem">
