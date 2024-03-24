@@ -2,7 +2,7 @@
 layout: model-composition
 ---
 
-## Abstract
+## Overview
 
 Recent developments in Multimodal Large Language Models (MLLMs) have shown rapid progress, moving towards the goal of creating versatile MLLMs that understand inputs from various modalities. However, existing methods typically rely on joint training with paired multimodal instruction data, which is resource-intensive and challenging to extend to new modalities. In this paper, we propose a new paradigm through the model composition
 of existing MLLMs to create a new model that retains the modal understanding capabilities of each original model. Our basic implementation, **NaiveMC**, demonstrates the effectiveness of this paradigm by reusing modality encoders and merging LLM parameters. Furthermore, we introduce **DAMC** to address parameter interference and  mismatch issues during the merging process, thereby enhancing the model performance. To facilitate research in this area, we propose **MCUB**, a benchmark for assessing ability of MLLMs to understand inputs from diverse modalities. Experiments on this benchmark and four other multimodal understanding tasks show significant improvements over baselines, proving that model composition can create a versatile model capable of processing inputs from multiple modalities.
@@ -40,28 +40,40 @@ For models trained using parameter decoupling, we can additionally adjust their 
       <img src="assets/static/sample.png" width="50%">
    </div>
 
-To demonstrate the effectiveness of our approach on tasks involving numerous modalities, inspired by Panagopoulou et al. (2023)(https://arxiv.org/pdf/2402.12750.pdf), we introduce a new benchmark called the Multimodal Commonality Understanding Benchmark **(MCUB)**. We provide an example of MCUB in the figure above.
+To demonstrate the effectiveness of our approach on tasks involving numerous modalities, we introduce a new benchmark called the Multimodal Commonality Understanding Benchmark **(MCUB)**. We provide an example of MCUB in the figure above.
 
 ## Qualitative Results
 
-   <div style="text-align:center;margin-bottom: 2rem">
-      <img src="assets/static/sample-1.png" width="50%">
-   </div>
-
-   <div style="text-align:center;margin-bottom: 2rem">
-      <img src="assets/static/sample-2.png" width="50%">
-   </div>
-
-   <div style="text-align:center;margin-bottom: 2rem">
-      <img src="assets/static/sample-3.png" width="57%">
-   </div>
-
-   <div style="text-align:center;margin-bottom: 2rem">
-      <img src="assets/static/sample-4.png" width="57%">
-   </div>
-
-   <div style="text-align:center;">
-      <img src="assets/static/sample-5.png" width="57%">
+   <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+         <div id="results-carousel" class="carousel results-carousel">
+         <div class="box m-5">
+            <div class="content has-text-centered">
+               <img src="assets/static/sample-1.png" alt="grade-lv" width="60%"/>
+            </div>
+         </div>
+         <div class="box m-5">
+            <div class="content has-text-centered">
+               <img src="assets/static/sample-2.png" alt="grade-lv" width="60%"/>
+            </div>
+         </div>
+         <div class="box m-5">
+            <div class="content has-text-centered">
+               <img src="assets/static/sample-3.png" alt="grade-lv" width="60%"/>
+            </div>
+         </div>
+         <div class="box m-5">
+            <div class="content has-text-centered">
+               <img src="assets/static/sample-4.png" alt="grade-lv" width="60%"/>
+            </div>
+         </div>
+         <div class="box m-5">
+            <div class="content has-text-centered">
+               <img src="assets/static/sample-5.png" alt="grade-lv" width="60%"/>
+            </div>
+         </div>
+         </div>
+      </div>
    </div>
 
 ## Contact
