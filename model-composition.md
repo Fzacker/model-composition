@@ -76,7 +76,7 @@ To demonstrate the effectiveness of our approach on tasks involving numerous mod
 
 <span style="font-size:1.6rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: normal; color: #6f86d6;">Contact</span>
 
-This project is co-led by [Chi Chen](https://carboncoo.github.io) (), [Yiyang Du](https://adu2021.github.io), and is advised by [Peng Li](https://www.lpeng.net/) (lipeng@air.tsinghua.edu.cn) and [Yang Liu](https://nlp.csai.tsinghua.edu.cn/~ly) (liuyang2011@tsinghua.edu.cn).
+This project is co-led by [Chi Chen](https://carboncoo.github.io), [Yiyang Du](https://adu2021.github.io), and is advised by [Peng Li](https://www.lpeng.net/) (lipeng@air.tsinghua.edu.cn) and [Yang Liu](https://nlp.csai.tsinghua.edu.cn/~ly) (liuyang2011@tsinghua.edu.cn).
 
 <span style="font-size:1.6rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: normal; color: #6f86d6;">Citation</span>
 ```
